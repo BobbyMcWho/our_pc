@@ -1,6 +1,6 @@
 require "minitest/autorun"
 
-module OurPC
+module ArrPC
   class Test < Minitest::Test
   end
 end

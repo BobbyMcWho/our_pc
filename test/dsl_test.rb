@@ -1,6 +1,6 @@
 require "helper"
 
-class DSLTest < OurPC::Test
+class DSLTest < ArrPC::Test
   def test_omg
     assert true
   end

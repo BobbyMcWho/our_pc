@@ -1,9 +1,9 @@
 require "socket"
 require "io/wait"
-require "our_pc/session"
+require "arr_pc/voyage"
 
-module OurPC
-  class Client
+module ArrPC
+  class Matey
     def initialize address
       @host, @port = address.split ':'
       @scheme    = 'http'
@@ -13,7 +13,7 @@ module OurPC
 
     def connect
       @socket = make_connection
-      @session = Session.new @socket
+      @session = Voyage.new @socket
       @session.submit_settings []
     end
 

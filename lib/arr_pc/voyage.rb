@@ -1,6 +1,6 @@
 require "ds9"
 
-module OurPC
+module ArrPC
   module IOEvents
     def initialize reader, writer
       super()
@@ -48,8 +48,8 @@ module OurPC
     end
   end
 
-  class Client
-    class Session < ::DS9::Client
+  class Matey
+    class Voyage < ::DS9::Client
       include IOEvents
 
       def initialize sock
@@ -102,7 +102,7 @@ module OurPC
     end
   end
 
-  class Server
+  class Ship
     class Request
       attr_accessor :protobuf
 
@@ -122,7 +122,7 @@ module OurPC
 
       def << x
         if @in_flight
-          raise "no implemented yet"
+          raise "not implemented yet"
         else
           _, len, buf = x.unpack('CNa*')
 
@@ -144,7 +144,7 @@ module OurPC
       end
     end
 
-    class Session < DS9::Server
+    class Voyage < DS9::Server
       include IOEvents
 
       def initialize sock, handler

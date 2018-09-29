@@ -1,9 +1,9 @@
 require "helper"
-require 'our_pc/server'
+require 'arr_pc/ship'
 require "google/protobuf"
 
-class DSLTest < OurPC::Test
-  class HelloWorldService < OurPC::Server
+class DSLTest < ArrPC::Test
+  class HelloWorldShip < ArrPC::Ship
   end
 
   def test_lol

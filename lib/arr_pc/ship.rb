@@ -1,11 +1,11 @@
 require "socket"
 require "io/wait"
-require "our_pc/session"
+require "arr_pc/voyage"
 
-module OurPC
-  class Server
+module ArrPC
+  class Ship
     def initialize socket
-      @session = Session.new socket, self
+      @session = Voyage.new socket, self
       @session.submit_settings [
         [DS9::Settings::MAX_CONCURRENT_STREAMS, 100],
       ]

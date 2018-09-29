@@ -1,10 +1,10 @@
-require 'our_pc/server'
+require 'arr_pc/ship'
 require 'socket'
 require "helloworld_pb"
 
 include Helloworld
 
-class HelloWorldServer < OurPC::Server
+class HelloWorldShip < ArrPC::Ship
   service "helloworld.Greeter" do |rpc|
     rpc.method "SayHello", HelloRequest, HelloReply do |req|
       HelloReply.new(message: "Hello #{req.name}")
@@ -18,7 +18,7 @@ loop do
   conn = server.accept    # Wait for a client to connect
   conn.setsockopt(Socket::IPPROTO_TCP, Socket::TCP_NODELAY, 1)
   puts "Got a client"
-  session = HelloWorldServer.new conn
+  session = HelloWorldShip.new conn
   session.run
   puts "finished"
 end

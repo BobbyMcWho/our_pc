@@ -30,11 +30,11 @@ end
 
 task "examples/lib/helloworld_pb.rb"
 
-task :server => ["examples/lib/helloworld_pb.rb", :deps] do
-  sh "ruby -I lib:examples/lib hello_world_server.rb"
+task :ship => ["examples/lib/helloworld_pb.rb", :deps] do
+  sh "ruby -I lib:examples/lib hello_world_ship.rb"
 end
 
-task :client => ["examples/lib/helloworld_pb.rb", :deps] do
+task :matey => ["examples/lib/helloworld_pb.rb", :deps] do
   sh "ruby -I lib:examples/lib hello_world.rb"
 end
 
